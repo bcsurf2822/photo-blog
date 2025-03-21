@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Photo(props) {
-  const post = props.post;
+function Photo({ post, removePost, comments }) {
   return (
     <figure className="figure">
       <Link to={`/single/${post.id}`}>
@@ -12,21 +11,27 @@ function Photo(props) {
       <figcaption>
         <p>{post.description}</p>
       </figcaption>
+
       <div className="button-container">
-        <button
-          onClick={() => props.removePost(post.id)}
-          className="remove-button"
-        >
+        <button onClick={() => removePost(post.id)} className="remove-button">
           Remove
         </button>
+
+        <Link className="button" to={`/single/${post.id}`}> 
+ <div className="comment-count"> 
+ <div className="speech-bubble"> </div>
+0
+ </div>
+ </Link>
       </div>
     </figure>
   );
 }
 
 Photo.propTypes = {
-  posts: PropTypes.object.isRequired,
-  onRemovePhoto: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
+  comments: PropTypes.object.isRequired,
+  removePost: PropTypes.func.isRequired,
 };
 
 export default Photo;

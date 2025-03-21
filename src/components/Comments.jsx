@@ -23,7 +23,6 @@ export default function Comments({ addComment, postId, comments = [] }) {
         <input type="submit" />
       </form>
 
-      {/* Show comments */}
       {comments.map((comment, i) => (
         <p key={i}>{comment}</p>
       ))}

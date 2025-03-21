@@ -12,7 +12,7 @@ class Main extends Component {
   }
 
   render() {
-    console.log("MAIN", this.props);
+
     return (
       <div>
         <div>
