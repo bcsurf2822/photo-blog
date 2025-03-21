@@ -22,7 +22,16 @@ class Main extends Component {
         </div>
 
         <Routes>
-          <Route exact path="/" element={<PhotoWall {...this.props.posts} />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <PhotoWall
+                posts={this.props.posts}
+                removePost={this.props.removePost}
+              />
+            }
+          />
           <Route path="/AddPhoto" element={<AddPhoto {...this.props} />} />
           <Route
             path="/single/:id"
