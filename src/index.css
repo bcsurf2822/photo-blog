@@ -1,16 +1,16 @@
 html {
   font-size: 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 p {
   font-size: 1.6rem;
   line-height: 1.5;
 }
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: billabong, "billabongregular";
   text-align: center;
   font-weight: 100;
-  font-size: 11rem;
+  font-size: 13rem;
   margin: 2rem 0;
   letter-spacing: -1px;
   color: black;
@@ -23,7 +23,20 @@ h1 a {
 h1 a:focus {
   outline: 0;
 }
-
+@font-face {
+  font-family: "billabongregular";
+  src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot");
+  src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff")
+      format("woff"),
+    url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf")
+      format("truetype"),
+    url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background: offwhite;
 }
@@ -96,17 +109,7 @@ body {
   outline: none;
   resize: vertical;
 }
-.size-6 {
-  width: 3rem;
-  height: 3rem;
-  stroke: #333;
-  transition: transform 0.2s ease-in-out;
-}
 
-.size-6:hover {
-  transform: scale(1.2);
-  stroke: #007bff;
-}
 .button-container {
   margin: 0 auto;
   display: flex;
@@ -114,7 +117,7 @@ body {
   justify-content: center;
 }
 button,
-.remove-button {
+.button {
   border: 2px solid #f2f2f2;
   background: none;
   flex-basis: 48%;
@@ -196,4 +199,16 @@ button:focus,
   align-items: center;
   justify-content: center;
   font-size: 28pt;
+}
+
+.size-6 {
+  width: 3rem;
+  height: 3rem;
+  stroke: #333;
+  transition: transform 0.2s ease-in-out;
+}
+
+.size-6:hover {
+  transform: scale(1.2);
+  stroke: #007bff;
 }
