@@ -96,14 +96,16 @@ body {
   outline: none;
   resize: vertical;
 }
-.addIcon {
-  background: url("https://image.flaticon.com/icons/svg/60/60740.svg") center
-    no-repeat;
-  background-size: contain;
-  padding: 40px;
-  display: table;
-  margin: 20px auto;
-  border: none;
+.size-6 {
+  width: 3rem;
+  height: 3rem;
+  stroke: #333;
+  transition: transform 0.2s ease-in-out;
+}
+
+.size-6:hover {
+  transform: scale(1.2);
+  stroke: #007bff;
 }
 .button-container {
   margin: 0 auto;
