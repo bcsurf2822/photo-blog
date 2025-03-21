@@ -12,7 +12,7 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log("MAIN", this.props);
     return (
       <div>
         <div>
@@ -22,9 +22,18 @@ class Main extends Component {
         </div>
 
         <Routes>
-          <Route exact path="/" element={<PhotoWall {...this.props} />} />
+          <Route exact path="/" element={<PhotoWall {...this.props.posts} />} />
           <Route path="/AddPhoto" element={<AddPhoto {...this.props} />} />
-          <Route path="/single/:id" element={<Single {...this.props} />} />
+          <Route
+            path="/single/:id"
+            element={
+              <Single
+                posts={this.props.posts}
+                comments={this.props.comments}
+                addComment={this.props.addComment}
+              />
+            }
+          />
         </Routes>
       </div>
     );
@@ -33,7 +42,8 @@ class Main extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state,
+    posts: state.posts,
+    comments: state.comments,
   };
 }
 export default connect(mapStateToProps)(Main);
